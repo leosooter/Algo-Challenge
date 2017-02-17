@@ -1,0 +1,36 @@
+function findMax4(array){
+  var valObj = {}
+  var sumArray = [];
+  var sum = array[0];
+  var arrayMax = array[0];
+  var arrayMin = array[0];
+  for (var i = 0; i < array.length; i++) {
+    sum = array[i];
+    var next = i + 1;
+    while( Math.sign(array[i]) === Math.sign(array[next]) ){
+      sum += array[next];
+      i ++;
+      next ++;
+    }
+    sumArray.push(sum);
+  }
+  var maxSum = sumArray[0];
+  var start = 0;
+  var end = 0;
+  for (var i = 0; i < sumArray.length; i++) {
+    if( sumArray[i] >= 0){
+      var sum = sumArray[i];
+      for (var j = i + 1; j < sumArray.length; j++) {
+        sum += sumArray[j];
+        if (sum > maxSum){
+          start = i;
+          end = j;
+          maxSum = sum;
+        }
+      }
+    }
+  }
+  return maxSum;
+}
+
+module.exports = findMax4;

@@ -1,0 +1,19 @@
+function robVersion1(string){
+  var appearances=[];
+  var occurences=[];
+  for (var i=0; i<string.length; i++){
+    var lookFor = string.charAt(i);
+    var check= appearances.indexOf(lookFor);
+    if(check === -1){
+      appearances.push(lookFor);
+      occurences.push(1)
+    }
+    else{
+      occurences[check] +=1;
+    }
+  }
+  check = occurences.indexOf(1);
+  return appearances[check];
+}
+
+module.exports = robVersion1;

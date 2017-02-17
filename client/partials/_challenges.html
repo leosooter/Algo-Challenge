@@ -1,0 +1,59 @@
+<div class="page-title">
+  <h2>Challenges</h2>
+</div>
+<select class="challenge-select" ng-model="currentChallenge" ng-options="challenge.name for challenge in challenges">
+
+</select>
+
+<div class="current-challenge">
+  <h3>{{currentChallenge.name}}</h3>
+  <h4>{{currentChallenge.description}}</h4>
+  <h4>{{currentChallenge.returnDescription}}</h4>
+  <p ng-repeat="example in currentChallenge.examples">Example: Given {{example[0]}}, the answer would be {{example[1]}}</p>
+</div>
+
+<button type="button" ng-click="showSolutionForm = true">Submit a Solution to this Challenge</button>
+
+<div class="container" ng-show="showSolutionForm">
+  <h3>Upload your solution to this challenge</h3>
+  <p>Solution must be a javascript file</p>
+  <form enctype="multipart/form-data">
+    <div class="form-group row">
+      <label for="givenName">Solution Name</label>
+    </div>
+
+    <div class="form-group row">
+      <input type="text" ng-model="newSolution.givenName" name="givenName">
+    </div>
+
+    <div class="form-group row">
+      <label for="solutionFile">Select a File</label>
+    </div>
+
+    <div class="form-group row">
+      <input type="file" name="solutionFile" nv-file-select uploader="uploader">
+    </div>
+
+    <div class="form-group row">
+      <label for="privacy">Who can view this Solution?</label>
+    </div>
+
+    <div class="form-group row">
+      <select ng-model="newSolution.privacy" name="privacy">
+        <option value="anyone" default="true">Anyone</option>
+        <option value="friends">Friends</option>
+        <option value="private">Private</option>
+      </select>
+    </div>
+
+    <div class="form-group row">
+      <input type="submit" ng-click="upload()" value="Upload">
+    </div>
+
+  </form>
+</div>
+
+<h3 class="solution-message">{{solutionUploadMessage}}</h3>
+
+
+<a href="#!newChallenge"><button type="button" ng-click="showSolutionForm = true">Create a new Challenge</button></a>

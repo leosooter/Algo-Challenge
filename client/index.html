@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head ng-controller="loadController">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Algo Challenge</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Inconsolata|Montserrat|PT+Sans+Caption" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="/js/chart.js/dist/Chart.min.js" charset="utf-8"></script>
+    <script src="/js/angular/angular.js" charset="utf-8"></script>
+    <script src="/js/angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="/js/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src='/js/angular-file-upload/dist/angular-file-upload.js' charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js" charset="utf-8"></script>
+    <!--Load application files  -->
+    <script src="/app/app.js"></script>
+    <script src="/app/services/auth.js" charset="utf-8"></script>
+    <script src="/app/factories/authInterceptor.js" charset="utf-8"></script>
+    <script src="/app/factories/userFactory.js" charset="utf-8"></script>
+    <script src="/app/factories/algoFactory.js" charset="utf-8"></script>
+    <script src="/app/controllers/userController.js" charset="utf-8"></script>
+    <script src="/app/controllers/algoController.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row logo">
+            <a href="#!"><h1>[Algo, Challenge]</h1></a>
+        </div>
+        <div class="row">
+          <ul class="header-nav">
+            <li><a href="#!challenges">Challenges</a></li>
+            <li><a href="#!gallery">Solutions</a></li>
+            <li><a href="#!arena">Arena</a></li>
+            <li><a href="#!loginReg">Login/Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div ng-controller="mainController">
+        <div ng-view="">
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+
+<!-- Ui.Bootstrap tools for later use
+Progressbar (ui.bootstrap.progressbar)
+Rating (ui.bootstrap.rating)
+Alert (ui.bootstrap.alert) -->

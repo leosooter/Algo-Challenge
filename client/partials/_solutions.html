@@ -1,0 +1,17 @@
+<div class="page-title">
+  <h2>Solutions</h2>
+</div>
+<div class="solutions-wrapper">
+  <div class="solution" ng-repeat="solution in solutions">
+    <!-- <p>Solution{{solution}}</p> -->
+    <h3>{{solution.givenName}}</h3>
+    <div class="solution-contents">
+      <!-- <p>{{solution.contents}}</p> -->
+      <p ng-repeat="line in solution.contents track by $index" style="margin-left : {{line[0]}}px">{{line[1]}}</p>
+    </div>
+
+    <a href="#!solutionshow"><button type="button" ng-click="">View this solution in detail</button></a>
+    <!-- <p>Created by : {{solution._user}}</p> -->
+    <a href="#!arena"><button type="button" ng-click="">See this Solution in Action</button></a>
+  </div>
+</div>

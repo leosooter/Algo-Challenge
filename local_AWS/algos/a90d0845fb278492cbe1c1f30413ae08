@@ -1,0 +1,23 @@
+function robVersion2(str){
+  var length = str.length;
+  var uniHash = [];
+  var dupHash = [];
+  for (var i = 0; i < length; i++) {
+    var uIndex=uniHash.indexOf(str[i]);
+    var dIndex=dupHash.indexOf(str[i]);
+    if(uIndex === -1 && dIndex === -1){
+      uniHash.push(str[i]);
+    }
+    else if(uIndex !== -1){
+      delete uniHash[uIndex];
+      dupHash.push(str[i]);
+    }
+  }
+  var returnVal=uniHash.join('');
+  if (returnVal.length<1){
+    return undefined
+  }
+  return returnVal[0];
+}
+
+module.exports = robVersion2;

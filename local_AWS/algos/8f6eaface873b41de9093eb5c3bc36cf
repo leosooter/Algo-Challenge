@@ -1,0 +1,24 @@
+function leoVersion(str){
+  var uniHash = {};
+  var dupHash = {};
+  for (var i = 0; i < str.length; i++) {
+    if(uniHash[str[i]] === undefined && dupHash[str[i]] === undefined){
+      uniHash[str[i]] = i;
+    }
+    else if(uniHash[str[i]] != undefined){
+      delete uniHash[str[i]];
+      dupHash[str[i]] = true;
+    }
+  }
+  var first = str.length;
+  var returnVal;
+  for( key in uniHash){
+    if(uniHash[key] < first){
+      first = uniHash[key];
+      returnVal = key;
+    }
+  }
+  return returnVal;
+}
+
+module.exports = leoVersion;

@@ -1,0 +1,16 @@
+function findMax5(array){
+  var maxSum = array[0];
+  var sum = array[0];
+  for (var i = 0; i < array.length; i++) {
+    sum += array[i];
+    if(sum > maxSum){
+      maxSum = sum;
+    }
+    if(sum <= 0){
+      sum = 0;
+    }
+  }
+  return maxSum;
+}
+
+module.exports = findMax5;

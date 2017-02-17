@@ -1,0 +1,76 @@
+<div class="page-title">
+  <h2>Algo-Arena</h2>
+</div>
+<div class="container arena-container">
+
+  <div id="arena-select-challenge" class="row">
+    <div class="col-sm-3">
+      <h3>Select a Challenge</h3>
+    </div>
+    <div class="col-sm-2">
+      <select class="arena-challenge" ng-model="arenaChallenge" ng-options="challenge.name for challenge in challenges"></select>
+    </div>
+    <div class="col-sm-2">
+      <button type="button" ng-click="testSolutions()">Run Tests</button>
+    </div>
+  </div>
+
+  <div class="arena-select-solution row">
+    <div class="col-sm-3">
+      <h4>Select a Solution</h4>
+    </div>
+  </div>
+
+  <div id="arena-display-solutions" class="row">
+    <div id="arena-solution1" class="col-sm-3 arena-solution">
+      <select ng-model="arenaSolutions[0]" ng-options="solution.givenName for solution in arenaChallenge.solutions">
+
+      </select>
+
+      <h3>{{arenaSolutions[0].givenName}}</h3>
+      <div ng-if="testResults[arenaSolutions[0]._id]">
+        <p>Average run-time: {{testResults[arenaSolutions[0]._id].avgTime}} ms</p>
+        <p ng-if="testResults[arenaSolutions[0]._id].errors.length" class="error">Errors : {{testResults[arenaSolutions[0]._id].errors.length}}</p>
+        <p ng-if="!testResults[arenaSolutions[0]._id].errors.length" class="success">No errors</p>
+      </div>
+
+    </div>
+
+    <div id="arena-solution2" class="col-sm-3 arena-solution">
+      <select ng-model="arenaSolutions[1]" ng-options="solution.givenName for solution in arenaChallenge.solutions">
+
+      </select>
+
+      <h3>{{arenaSolutions[1].givenName}}</h3>
+      <div ng-if="testResults[arenaSolutions[1]._id]">
+        <p>Average run-time: {{testResults[arenaSolutions[1]._id].avgTime}} ms</p>
+        <p ng-if="testResults[arenaSolutions[1]._id].errors.length" class="error">Errors : {{testResults[arenaSolutions[1]._id].errors.length}}</p>
+        <p ng-if="!testResults[arenaSolutions[1]._id].errors.length" class="success">No errors</p>
+      </div>
+
+    </div>
+
+    <div id="arena-solution3" class="col-sm-3 arena-solution">
+      <select ng-model="arenaSolutions[2]" ng-options="solution.givenName for solution in arenaChallenge.solutions">
+
+      </select>
+
+      <h3>{{arenaSolutions[2].givenName}}</h3>
+      <div ng-if="testResults[arenaSolutions[2]._id]">
+        <p>Average run-time: {{testResults[arenaSolutions[2]._id].avgTime}} ms</p>
+        <p ng-if="testResults[arenaSolutions[2]._id].errors.length" class="error">Errors : {{testResults[arenaSolutions[2]._id].errors.length}}</p>
+        <p ng-if="!testResults[arenaSolutions[2]._id].errors.length" class="success">No errors</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options">
+      </canvas>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,74 @@
+<div class="container">
+  <h3>Login</h3>
+  <form ng-submit="login()">
+
+    <div class="form-group row">
+      <label for="email" class="col-form-label col-sm-4">Email</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="email" ng-model="loginUser.email">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="password" class="col-form-label col-sm-4">Password</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="password" ng-model="loginUser.password">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="offset-sm-2 col-sm-6">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+<div class="container" action="/create" method="Post">
+  <h3>Register</h3>
+  <form ng-submit="register()">
+    <div class="form-group row">
+      <label for="firstName" class="col-form-lable col-sm-4">First Name</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="firstName" ng-model="newUser.firstName">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="lastName" class="col-form-label col-sm-4">Last Name</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="lastName" ng-model="newUser.lastName">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="email" class="col-form-label col-sm-4">Email</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="email" ng-model="newUser.email">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="password" class="col-form-label col-sm-4">Password</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="password" ng-model="newUser.password">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="cPassword" class="col-form-label col-sm-4">Confirm Password</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="cPassword" ng-model="newUser.cPassword">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="offset-sm-2 col-sm-6">
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+    </div>
+
+  </form>
+</div>
